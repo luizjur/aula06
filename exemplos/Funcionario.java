@@ -2,16 +2,18 @@ package exemplos;
 
 public class Funcionario {
 
-    private String nome;
+    protected String nome;
     private double salario;
+    
+   
 
     public Funcionario() { //contrutor default (eu não passo nenhum padrao)
         salario = 0 ; //não precisa porque quando cria um contrutor vem tudo zerado
 
     }
 
-    // Overload, pelo menos um parametro tem que ser diferente.
-    public Funcionario(String noem, double salario){  // é um segundo construtor
+    // Overload, (sobre carga de metodos) pelo menos um parametro tem que ser diferente.
+    public Funcionario(String nome, double salario){  // é um segundo construtor
         this.nome = nome;
         this.salario = salario;
 
@@ -41,4 +43,15 @@ public class Funcionario {
             this.salario = salario;
         }
     }
+
+    public String imprimir(){
+        return "Funcionario" + nome + "salario: " + String.format("%.2f" , salario);
+    }
+
+    public void aumentarSalario (Double perc){
+        // salario = salario + salario * perc;
+        // salario = salario * (1 + perc);
+        salario *= (1 + perc);
+        }
+
 }
